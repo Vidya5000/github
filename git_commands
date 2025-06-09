@@ -1,14 +1,17 @@
 Essential Git Commands for DevOps Engineers
+
 🔧 Setup & Configuration
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
-git config --list               			Verify configuration
+git config --list     Verify configuration
+
 📥 Repository Management
 git init               				Initialize a new Git repo
 git init <repo name>             		 create an initialized empty git repo
 git clone <repo-url>               		Clone an existing repo
 git remote -v               			View configured remote repos
 git remote add <link of remote empty repository>
+
 📄 Working with Files
 git status               			Show modified, staged, and untracked files
 git add <file>               			Stage a specific file
@@ -16,9 +19,11 @@ git add .               			Stage all changes
 git rm <file>               			Remove file from staging and disk
 git rm -rf <file/folder name>   		forcefully remove
 git mv <old> <new>               		Rename or move file
+
 💾 Committing Changes
 git commit -m "Your message"               Commit staged changes
 git commit -am "msg"               		Add & commit tracked files in one step
+
 🕗 Viewing History
 git log               				View commit history
 git log --oneline --graph --all               Compact, visual commit tree
@@ -40,11 +45,13 @@ git merge --ff-only <branch>       fast forward merge which is basically a re
 git merge --no-ff <branch>       forced merge which is basic without ff
 git rebase <branch>               Reapply commits on top of another base
 git merge/rebase --abort       unmerge or unbase
+
 ☁️ Remote Collaboration
 git pull               			Fetch + merge changes from remote
 git fetch               		Only download changes
 git push               		Upload changes to remote
 git push -u origin <branch>               Push new branch to remote & track
+
 ✅ 1. Undo Working Directory Changes
 Task	Command
 Discard changes in a file	git restore <file>
@@ -59,6 +66,7 @@ Task	Command
 Unstage a specific file	git reset <file>
 Unstage all files	git reset
 Unstage and keep changes	git restore --staged <file>
+
 ✅ 3. Undo Commits
 Task	Command
 Undo the last commit but keep changes	git reset --soft HEAD~1
@@ -66,6 +74,7 @@ Undo last commit and unstage changes	git reset --mixed HEAD~1
 Undo last commit and discard changes	git reset --hard HEAD~1
 Undo multiple commits	git reset --hard HEAD~N
 Revert a commit (safe, creates new commit)	git revert <commit_hash>
+
 ✅ 4. Clean Untracked Files
 Task	Command
 List what will be deleted	git clean -n
@@ -73,6 +82,7 @@ Delete untracked files	git clean -f
 Delete untracked files and dirs	git clean -fd
 Delete ignored files too	git clean -fx
 Clean everything: untracked, dirs, ignored	git clean -fdx
+
 ✅ 5. Stash Changes (Temporary Undo)
 Task	Command
 Save uncommitted changes	git stash
@@ -81,6 +91,7 @@ Apply last stash	git stash apply
 Apply and delete stash	git stash pop
 Drop a stash	git stash drop stash@{0}
 Clear all stashes	git stash clear
+
 🚨 Warnings
 •	git reset --hard and git clean permanently delete changes. Use with caution.
 •	Use git status a
@@ -89,6 +100,7 @@ Clear all stashes	git stash clear
 git stash               		Save work temporarily
 git stash pop               		Re-apply stashed changes
 git cherry-pick <commit>               Apply a specific commit
+
 🔍 Debugging & Auditing
 git blame <file>               	Show who changed what
 git show <commit>               	Show changes of a commit
